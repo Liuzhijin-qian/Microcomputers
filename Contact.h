@@ -25,6 +25,7 @@ struct PeoInfor
 	char ADDRESS[MAX_ADDRESS];
 	char TELE[MAX_TELE];
 	int AGE;
+	int age;
 
 };
 

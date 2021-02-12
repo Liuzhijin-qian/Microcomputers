@@ -34,7 +34,6 @@ int main()
 			break;
 		case ÅÅĞò:
 		//	SortContact;
-			break;
 		case ÍË³ö:
 			printf("³ÌĞòÍË³ö\n");
 			break;

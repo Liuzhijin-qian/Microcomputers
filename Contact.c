@@ -73,6 +73,7 @@ void DelContact(struct Contact* p)
 			printf("要删除的人不存在\n");
 
 		}
+
 		else
 		{
 			int j = 0;
@@ -187,11 +188,5 @@ void ShowContact(struct Contact* p)
 		}
 	}
 }
-
-
-
-
-
-
 
 
