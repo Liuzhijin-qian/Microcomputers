@@ -1,54 +1,36 @@
 #include <stdio.h>
-#define N 80
-int fun(char *str)
+void fun (int (*s)[10], int *b, int *n, int mm, int nn)
 {
-	int j= 0;
-	int i = 0;
-	int flag = 1;
-	while(*str)
-	{
-		i++;str++;
-	}
-	
-	for(j=0;j<i/2;j++)
-	{
-		if(str[i] == str[i-1-j])
-		{
-			;
-		}
-
-		else
-		{
-			flag = 0;
-			return flag;
-		}
-	}
-
-	
+  int i,j,k = 0;
+  for(i=0;i<mm;i++)
+  {
+	  for(j=0;j<nn;j++)
+	  {
+		  b[k++] = s[i][j];
+	  }
+  }
+  *n = k;
 }
-
-
 void main()
 {
-	 char s[N];
-	 FILE *out;
-         char *test[]={"1234321","123421","123321","abcdCBA"};
-	 int i;
-	 printf("Enter a string : ");
-	 gets(s);
-	 printf("\n\n");
-	 puts(s);
-	 if(fun(s))
-		printf("YES\n");
-	 else
-		printf("NO\n"); 
-	 /************************************/
-	 out=fopen("out.dat","w");
-	 for(i=0;i<4;i++)
-	 	if(fun(test[i]))
-			fprintf(out,"YES\n");
-		else
-			fprintf(out,"NO\n");
-	 fclose(out);
-	 /************************************/
+  FILE *wf;
+  int w[10][10]={{33,33,33,33},{44,44,44,44},{55,55,55,55}}, i, j;
+  int a[100]={0},n=0 ;
+  printf("The matrix:\n");
+  for (i=0; i<3; i++)
+    {for (j=0;j<4;j++)  
+        printf("%3d",w[i][j]);
+     printf("\n");
+    }
+  fun(w,a,&n,3,4);
+  printf("The A array:\n");
+  for(i=0; i<n; i++)  
+     printf("%3d",a[i]); 
+  printf("\n\n");
+/******************************/
+  wf=fopen("out.dat","w");
+  for(i=0; i<n; i++)  
+     fprintf(wf,"%3d",a[i]); 
+  fclose(wf);
+/*****************************/
 }
