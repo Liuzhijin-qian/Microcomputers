@@ -127,7 +127,7 @@ void SearchContact(struct Contact* p)
 }
 
 //修改联系人
-void ModifyContact(struct Contact* p)
+void ModifyContact(struct Contxact* p)
 {
 	if (p->size == 0)
 	{
